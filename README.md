@@ -246,26 +246,6 @@ Input: graph G=(V,E), n vertices, m edges
 
 ---
 
-## Section 3. Connection to QAOA
-
-Standard QAOA starts from $|+\rangle^{\otimes n}$. Substitute the
-WSL-prepared $|\psi_f\rangle$ instead:
-
-$$
-|\psi(\gamma,\beta)\rangle
-= U_M(\beta_p)U_C(\gamma_p)\cdots U_M(\beta_1)U_C(\gamma_1)\,|\psi_f\rangle.
-$$
-
-**Practical note:** at large $n$, a single postselection round gives only
-a weak bias (concentration of measure — see Section 2.4's note). Two
-knobs address this: push $\lambda\to 2$ for maximal dynamic range in
-$f$, and/or wrap the ancilla scheme in a handful of rounds of standard
-oblivious amplitude amplification (reflect about the ancilla-$|0\rangle$
-branch, reapply the state-prep block) to sharpen the bias further before
-measuring or handing the state to QAOA.
-
----
-
 ## Summary
 
 $$
