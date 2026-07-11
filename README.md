@@ -153,19 +153,22 @@ the **uniform** distribution over cuts, not a biased one.
 
 The bias comes from the full **ancilla interference scheme** of the
 paper's Fig. 1:
+<img width="804" height="384" alt="image" src="https://github.com/user-attachments/assets/1806f97f-06c3-4b1e-95cc-d4e84f439a08" />
 
 1. Prepare $|s\rangle\otimes|+\rangle_{\rm anc}$ ($H^{\otimes n}$ on the
    register, $H$ on one ancilla qubit).
 2. Apply $\widehat U_{f,\epsilon_0}$ **controlled by the ancilla**:
    $\;\frac{1}{\sqrt2}\bigl(|s\rangle|0\rangle+e^{-if(x)\epsilon_0}|s\rangle|1\rangle\bigr)$
    (phase applied only in the $|1\rangle_{\rm anc}$ branch).
-3. Apply $H$, then $P=\mathrm{diag}(1,-i)$, to the ancilla. This turns the
+   <img width="1172" height="776" alt="image" src="https://github.com/user-attachments/assets/697b1215-f9f3-4a21-abd0-d58f9688ecbe" />
+
+4. Apply $H$, then $P=\mathrm{diag}(1,-i)$, to the ancilla. This turns the
    *relative* phase between branches into an *amplitude* difference:
    $$
    \tfrac12(I+e^{-if\epsilon_0})|s\rangle|0\rangle
    -\tfrac{i}{2}(I-e^{-if\epsilon_0})|s\rangle|1\rangle.
    $$
-4. **Measure the ancilla; postselect on $|1\rangle$** (repeat-until-success
+5. **Measure the ancilla; postselect on $|1\rangle$** (repeat-until-success
    if it comes out $|0\rangle$).
 
 The surviving register state is $\propto (I-e^{-if\epsilon_0})|s\rangle$,
